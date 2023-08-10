@@ -12,7 +12,7 @@ Is mandatory to install husky for the  git-hooks
 
 ```npm install husky```
 
-Note: In documentation there is a way to maange node versions
+Note: In documentation there is a way to manage node versions
 
 ## Dependencies Versions
 
@@ -35,7 +35,8 @@ This is the implementation on Angular project features
 
 We implement Gitflow and convercional
 
-- Conencional commit https://www.conventionalcommits.org/en/v1.0.0/
+- Convencional commit https://www.conventionalcommits.org/en/v1.0.0/
+- Git flow https://github.com/nvie/gitflow
 
 
 Install nvm On Windows:
