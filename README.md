@@ -1,11 +1,27 @@
-# Pupuest will be a project to automate testing of a tarding startegy
+# Arquetipo Front - Angular
 
-This will be the fornend for integrate the trading view.
+Se trata del arquetipo para Front desarrollado en Angular.
 
-### The road map will be:
+## Prerrequisitos
 
-    - Integration with Trading View
-    - Read ops from fronted app
-    - Integration with Power BI
-    - Integrate ML 
-    - Generate atomatic BT
+- Node 16
+
+## Características integradas
+
+Dentro del proyecto base se integran las siguientes características:
+
+- Frontend Angular 9.1
+
+## Documentación
+
+- https://corpus.izertis.com/arquitectura/nodejs/angular/arquetipos/1-2-0
+
+## Ejecución de tests
+
+La ejecución del testing en entorno local se lanzará utilizando el comando:
+
+```bash
+ng test
+```
+
+Adicionalmente se ha creado una configuración de Karma para la ejecución de testing utilizando Chorme Headless, útil para la ejecución en entornos sin interfaz gráfica, como puede ser un entorno Docker o un entorno CI. Esta configuración se incluye en el fichero `karma.ci.conf.js`.

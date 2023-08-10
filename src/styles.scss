@@ -3,5 +3,5 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "open-iconic/font/css/open-iconic-bootstrap.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
-@import "assets/sidebar/simple-sidebar.css";
-@import 'assets/app.css';
+@import "app/styles/sidebar/simple-sidebar.scss";
+@import 'assets/app.scss';

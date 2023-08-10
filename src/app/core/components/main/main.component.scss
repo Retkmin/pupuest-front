@@ -1,0 +1,33 @@
+
+#page-content-wrapper {
+    padding-top: 200px;
+    z-index: 0;
+    height: 100%;
+    overflow: scroll;
+}
+
+.sidebar-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    z-index: 1;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    height: 30px;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .sidebar-toggle {
+        display: none;
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .sidebar-toggle {
+        display: none;
+    }
+ }

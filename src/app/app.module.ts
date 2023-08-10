@@ -13,28 +13,32 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { NgProgressHttpModule } from 'ngx-progressbar/http';
 import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AppComponent } from './app.component';
+
 
 // -------------- Services --------------
-import { LoginService } from './_services/login.service'; 
-import { MenuService } from './_services/menu.service';
-import { UserService } from './_services/user.service';
+import { LoginService } from './core/services/login.service';
+import { MenuService } from './core/services/menu.service';
+import { UserService } from './core/services/user.service';
+import { UserDataService } from './core/services/localStorage/userData.service';
+import { ErrorService } from './core/services/errorService/error.service';
 
 // -------------- Components --------------
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { MainComponent } from './main/main.component';
-import { MenuComponent } from './menu/menu.component';
-import { HomeComponent } from './home/home.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { UserDetailComponent } from './features/components/user-detail/user-detail.component';
+import { UserComponent } from './features/components/user/user.component';
+import { HomeComponent } from './features/pages/home/home.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { MainComponent } from './core/components/main/main.component';
+import { MenuComponent } from './core/components/menu/menu.component';
+import { PaginationComponent } from './core/components/pagination/pagination.component';
 
 // -------------- Guards --------------
-import { AuthGuard } from './_guards/auth.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 
 // -------------- Interceptors --------------
-import { TokenizedInterceptor } from './_interceptors/tokenized-interceptor';
-import { OAuthInterceptor } from './_interceptors/oauth-interceptor';
+import { OAuthInterceptor } from './core/interceptors/oauth-interceptor';
+import { TokenizedInterceptor } from './core/interceptors/tokenized-interceptor';
+import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -72,6 +76,8 @@ import { OAuthInterceptor } from './_interceptors/oauth-interceptor';
     LoginService,
     MenuService,
     UserService,
+    UserDataService,
+    ErrorService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenizedInterceptor,
@@ -81,7 +87,8 @@ import { OAuthInterceptor } from './_interceptors/oauth-interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: OAuthInterceptor,
       multi: true
-    }
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
