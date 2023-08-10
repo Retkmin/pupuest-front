@@ -1,27 +1,84 @@
-# Arquetipo Front - Angular
+# Front - Angular Pupuest
 
-Se trata del arquetipo para Front desarrollado en Angular.
+Proyect to create automated back testing of trading strategy. 
 
-## Prerrequisitos
+Backlog and roadmap: https://tree.taiga.io/project/retkmin-pupuest
 
-- Node 16
+## Requirements
 
-## Características integradas
+- Node 18
 
-Dentro del proyecto base se integran las siguientes características:
+Is mandatory to install husky for the  git-hooks
 
-- Frontend Angular 9.1
+```npm install husky```
+
+Note: In documentation there is a way to maange node versions
+
+## Dependencies Versions
+
+This is the implementation on Angular project features
+
+- Angular CLI: 16.2.0
+- Node: 18.10.0
+- Package Manager: npm 8.19.2
+- Angular: 16.2.0
+- @angular-devkit/architect       0.1602.0
+- @angular-devkit/build-angular   16.2.0
+- @angular-devkit/core            16.2.0
+- @angular-devkit/schematics      16.2.0
+- @schematics/angular             16.2.0
+- rxjs                            7.8.1
+- typescript                      5.1.6
+- zone.js                         0.13.1
 
 ## Documentación
 
-- https://corpus.izertis.com/arquitectura/nodejs/angular/arquetipos/1-2-0
+We implement Gitflow and convercional
 
-## Ejecución de tests
+- Conencional commit https://www.conventionalcommits.org/en/v1.0.0/
 
-La ejecución del testing en entorno local se lanzará utilizando el comando:
 
-```bash
-ng test
-```
+Install nvm On Windows:
 
-Adicionalmente se ha creado una configuración de Karma para la ejecución de testing utilizando Chorme Headless, útil para la ejecución en entornos sin interfaz gráfica, como puede ser un entorno Docker o un entorno CI. Esta configuración se incluye en el fichero `karma.ci.conf.js`.
+To install NVM on Windows, you can use "nvm-windows," a version tailored for this operating system. Follow these steps:
+
+Download the installer from the official repository: https://github.com/coreybutler/nvm-windows/releases
+Run the downloaded installer and follow the installation instructions.
+
+Verify the Installation:
+
+Once you have installed NVM, you can verify its installation by running the following command in the terminal:
+
+```nvm --version```
+
+This should display the version of NVM installed on your system.
+
+Install Node.js with NVM:
+
+After installing NVM, you can use it to install and manage different versions of Node.js. For example, to install the latest stable version of Node.js, you can use the following command:
+
+```nvm install stable```
+
+## Scripts 
+
+
+Launch project
+
+```npm run start```
+
+Launch test project
+
+```npm run test```
+
+Launch coverage project, open index.html on the coverage folder that is created after lauch script.
+
+```npm run coverage```
+
+Check the files lint
+
+```npm run lint```
+
+Check anbd fix files linter
+
+```npm run lint:fix```
+
