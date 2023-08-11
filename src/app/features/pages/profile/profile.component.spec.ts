@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProfileComponent } from './profile.component';
+import { TestingHelper } from 'src/app/core/helpers/testing.spec';
 
-import { UserDetailComponent } from './user-detail.component';
-import { TestingHelper } from '../../helpers/testing.spec';
-
-describe('UserDetailComponent', () => {
-  let component: UserDetailComponent;
-  let fixture: ComponentFixture<UserDetailComponent>;
+describe('ProfileComponent', () => {
+  let component: ProfileComponent;
+  let fixture: ComponentFixture<ProfileComponent>;
 
   beforeEach(async() => {
     TestingHelper.configureTest()
@@ -13,7 +12,7 @@ describe('UserDetailComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserDetailComponent);
+    fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -24,13 +24,14 @@ import { UserDataService } from './core/services/localStorage/userData.service';
 import { ErrorService } from './core/services/errorService/error.service';
 
 // -------------- Components --------------
-import { UserDetailComponent } from './features/components/user-detail/user-detail.component';
-import { UserComponent } from './features/components/user/user.component';
 import { HomeComponent } from './features/pages/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { MainComponent } from './core/components/main/main.component';
 import { MenuComponent } from './core/components/menu/menu.component';
 import { PaginationComponent } from './core/components/pagination/pagination.component';
+import { ProfileComponent } from './features/pages/profile/profile.component';
+import { MetricsComponent } from './features/pages/metrics/metrics.component';
+import { OperativeComponent } from './features/pages/operative/operative.component';
 
 // -------------- Guards --------------
 import { AuthGuard } from './core/guards/auth.guard';
@@ -39,16 +40,19 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { OAuthInterceptor } from './core/interceptors/oauth-interceptor';
 import { TokenizedInterceptor } from './core/interceptors/tokenized-interceptor';
 import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
+import { UserConfigurationComponent } from './features/pages/user-configuration/user-configuration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent,
-    UserDetailComponent,
     MainComponent,
     MenuComponent,
     HomeComponent,
+    UserConfigurationComponent,
+    ProfileComponent,
+    MetricsComponent,
+    OperativeComponent,
     PaginationComponent
   ],
   imports: [
