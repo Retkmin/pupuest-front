@@ -29,3 +29,46 @@ table thead .sortable:hover {
 .actions {
     margin-top: 20px;
 }
+
+
+:root {
+    /* Primary */
+    --c-primary: #CD325D;
+    --c-primary-100: #FFE9EF;
+    --c-primary-200: #FFBACD;
+    --c-primary-300: #EC668C;
+    --c-primary-400: #CD325D;
+    --c-primary-500: #B52950;
+    --c-primary-600: #991B3E;
+    --c-primary-700: #7C112F;
+    --c-primary-800: #5E061E;
+
+    --c-secondary: #44B1C0;
+
+    /* Tertiary */
+    --c-terciary: #29385D;
+    --c-terciary-100: #D8E3FF;
+    --c-terciary-200: #7184B4;
+    --c-terciary-300: #425481;
+    --c-terciary-500: #1E2B4B;
+    --c-terciary-600: #172340;
+
+    --c-background: #F9F9F9;
+    --c-black: #1A1A1A;
+    --c-error: #C90000;
+    --c-success: #107300;
+    --c-warning: #E2B100;
+
+    /* Grey */
+    --c-grey: #9E9E9E;
+    --c-grey-200: #F3F3F3;
+    --c-grey-300: #B6B6B6;
+    --c-grey-400: #666666;
+    --c-grey-500: #5B5B5B;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

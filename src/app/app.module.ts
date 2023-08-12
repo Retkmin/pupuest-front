@@ -32,6 +32,7 @@ import { PaginationComponent } from './core/components/pagination/pagination.com
 import { ProfileComponent } from './features/pages/profile/profile.component';
 import { MetricsComponent } from './features/pages/metrics/metrics.component';
 import { OperativeComponent } from './features/pages/operative/operative.component';
+import { HeaderComponent } from './core/components/header/header.component';
 
 // -------------- Guards --------------
 import { AuthGuard } from './core/guards/auth.guard';
@@ -50,6 +51,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     MenuComponent,
     HomeComponent,
     UserConfigurationComponent,
+    HeaderComponent,
     ProfileComponent,
     MetricsComponent,
     OperativeComponent,

@@ -29,11 +29,64 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     title: 'menu.home',
     icon: 'ion-home',
-    url: '/main/home'
+    url: 'home'
   },
   {
-    title: 'menu.users',
+    title: 'menu.fist-item',
     icon: '',
-    url: '/main/users'
+    url: ''
+  },
+  {
+    title: 'menu.second-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'menu.third-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'menu.fourth-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'menu.fifth-item',
+    icon: '',
+    url: ''
+  }
+];
+
+export const NAVBAR_ITEMS: MenuItem[] = [
+  {
+    title: 'nav-bar-items.fist-item',
+    icon: 'ion-home',
+    url: ''
+  },
+  {
+    title: 'nav-bar-items.second-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'nav-bar-items.third-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'nav-bar-items.fourth-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'nav-bar-items.fifth-item',
+    icon: '',
+    url: ''
+  },
+  {
+    title: 'nav-bar-items.sixth-item',
+    icon: '',
+    url: ''
   }
 ];

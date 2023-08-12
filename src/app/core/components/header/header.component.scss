@@ -1,0 +1,49 @@
+.header {
+    background: var(--c-background);
+    .header-container {
+        display: flex;
+        padding: 1rem 3rem;
+        width: 100%;
+    }
+    .icono {
+        width: 127px;
+    }
+    
+    .button-header-container {
+        display: flex;
+        justify-content: flex-end;
+        .header-btn {
+            margin: 1.5rem 1rem;
+            min-width: 150px;
+            min-height: 40px;
+            background-color: white;
+            color: var(--c-terciary);
+            border: var(--c-terciary) 1px solid;
+            &:hover {
+                background-color: var(--c-terciary);
+                color: white;
+            }
+        }
+    }
+    .navbar {
+        .nav-item {
+            & .nav-link {
+                color: var(--c-terciary);
+                &:hover {
+                    text-decoration: underline;
+                }
+                &.active {
+                    text-decoration: underline; 
+                }
+            }
+            &:last-child {
+                padding-left: 100px;
+            }
+            &:first-child {
+                & .nav-link {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
