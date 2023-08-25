@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { defineLocale, esLocale } from 'ngx-bootstrap/chronos';
+import { Router } from '@angular/router';
 /**
  * Componente para la gestión del login.
  */
@@ -9,10 +11,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  constructor() { }
+  model: any = {};
+  locale = 'es';
+  constructor(private localeService: BsLocaleService, private router: Router) { defineLocale('es', esLocale); }
 
   ngOnInit(): void {
-      // eslint-disable-next-line no-console
-      console.log('Register page');
-    }
+    this.localeService.use(this.locale);
+  }
+
+  public register() {
+    // call register service
+    this.router.navigate(['/login']);
+  }
+
+  public goBack(): void {
+    this.router.navigate(['/login']);
+  }
 }

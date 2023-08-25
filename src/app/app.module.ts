@@ -14,6 +14,7 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http';
 import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppComponent } from './app.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 // -------------- Services --------------
@@ -26,6 +27,7 @@ import { ErrorService } from './core/services/errorService/error.service';
 // -------------- Components --------------
 import { HomeComponent } from './features/pages/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
+import { RegisterComponent } from './core/components/register/register.component';
 import { MainComponent } from './core/components/main/main.component';
 import { MenuComponent } from './core/components/menu/menu.component';
 import { PaginationComponent } from './core/components/pagination/pagination.component';
@@ -47,6 +49,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     MainComponent,
     MenuComponent,
     HomeComponent,
@@ -75,7 +78,8 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     NgProgressModule,
     NgProgressHttpModule,
     NgProgressRouterModule,
-    NgSelectModule
+    NgSelectModule,
+    BsDatepickerModule
   ],
   providers: [
     AuthGuard,

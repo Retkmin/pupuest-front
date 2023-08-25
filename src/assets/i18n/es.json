@@ -33,10 +33,13 @@
     },
     "menu" : {
         "home": "Inicio",
-        "users" : "Usuarios",
         "logout" : "Salir"
     },
     "login" : {
+        "title": "TradingLab",
+        "slogan": "- Make your trade smarter -",
+        "recovery": "¿Has olvidado tu contraseña?",
+        "register": "Registrarse",
         "form" : {
             "user" : "Usuario",
             "password" : "Contraseña",
@@ -47,22 +50,16 @@
             "invalid-body": "El nombre de usuario y/o contraseña introducido no son correctos"
         }
     },
-    "user" : {
-        "id" : "ID",
-        "title" : "Usuarios",
-        "create" : "Crear usuario",
-        "selectRole" : "Seleccione un rol",
-        "roles" : "Roles",
-        "name": "Nombre",
-        "email": "Email",
-        "address": "Dirección",
-        "city": "Ciudad",
-        "country": "Pais",
-        "language": "Idioma",
-        "enabled": "Habilitado",
-        "username": "Nombre de usuario",
-        "password": "Contraseña",
-        "edit-user-title": "Editar usuario: {{name}}",
-        "create-user-title": "Crear nuevo usuario"
+    "register": {
+        "title": "Datos de registro",
+        "form": {
+            "name":"Nombre: ",
+            "surname":"Apellidos: ",
+            "user":"Nombre de usuario: ",
+            "email":"E-mail: ",
+            "birthday": "Fecha de nacimiento: ",
+            "submit": "Registrar",
+            "cancel": "Cancelar"
+        }
     }
 }
