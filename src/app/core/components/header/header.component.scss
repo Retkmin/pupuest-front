@@ -1,4 +1,5 @@
 .header {
+    color: white;
     background: var(--c-background);
     .header-container {
         display: flex;
@@ -26,6 +27,14 @@
         }
     }
     .navbar {
+        img {
+            height: 50px;
+            border-radius: 10px;
+        }
+        .title {
+            color: white;
+            padding-left: 10px;
+        }
         .nav-item {
             & .nav-link {
                 color: var(--c-terciary);

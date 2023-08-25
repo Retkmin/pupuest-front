@@ -8,6 +8,7 @@
 
 #wrapper {
     padding-left: 0;
+    overflow: hidden;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -41,6 +42,7 @@
     width: 100%;
     position: absolute;
     padding: 15px;
+    background-color: #1C2833;
 }
 
 #wrapper.toggled #page-content-wrapper {
