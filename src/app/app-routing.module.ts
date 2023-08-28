@@ -9,7 +9,7 @@ import { MetricsComponent } from './features/pages/metrics/metrics.component';
 import { UserConfigurationComponent } from './features/pages/user-configuration/user-configuration.component';
 import { OperativeComponent } from './features/pages/operative/operative.component';
 import { RegisterComponent } from './core/components/register/register.component';
-
+import { RecoveryComponent } from './core/components/recovery/recovery.component';
 
 
 /**
@@ -51,6 +51,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'recovery',
+    component: RecoveryComponent
   },
 
   /**

@@ -6,9 +6,36 @@
         padding: 1rem 3rem;
         width: 100%;
     }
-    .icono {
-        width: 127px;
-    }
+    .button-header-container {
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            label {
+                padding: 0 5px;
+                cursor: pointer;
+            }
+
+            .user, .log-out {
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                padding: 0 5px;
+                cursor: pointer;
+            }
+
+            .menu {
+                font-size: 35px;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                cursor: pointer;
+            }
+        }
+
+    } 
     
     .button-header-container {
         display: flex;
@@ -30,6 +57,9 @@
         img {
             height: 50px;
             border-radius: 10px;
+        }
+        label {
+            cursor: pointer; 
         }
         .title {
             color: white;

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./recovery.component.scss']
 })
 export class RecoveryComponent implements OnInit {
+  public displayMsg = false;
   model: any = {};
   locale = 'es';
   constructor(private localeService: BsLocaleService, private router: Router) { defineLocale('es', esLocale); }
@@ -20,8 +21,7 @@ export class RecoveryComponent implements OnInit {
   }
 
   public register() {
-    // call register service
-    this.router.navigate(['/login']);
+    this.displayMsg = true;
   }
 
   public goBack(): void {

@@ -35,6 +35,7 @@ import { ProfileComponent } from './features/pages/profile/profile.component';
 import { MetricsComponent } from './features/pages/metrics/metrics.component';
 import { OperativeComponent } from './features/pages/operative/operative.component';
 import { HeaderComponent } from './core/components/header/header.component';
+import { RecoveryComponent } from './core/components/recovery/recovery.component';
 
 // -------------- Guards --------------
 import { AuthGuard } from './core/guards/auth.guard';
@@ -50,6 +51,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    RecoveryComponent,
     MainComponent,
     MenuComponent,
     HomeComponent,

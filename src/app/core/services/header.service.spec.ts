@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TestingHelper } from '../_helpers/testing.spec';
+import { TestingHelper } from '../helpers/testing.spec';
 import { HeaderService } from './header.service';
 
 describe('HeaderService', () => {

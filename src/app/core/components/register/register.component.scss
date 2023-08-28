@@ -21,6 +21,22 @@
                 input {
                     max-width: 300px;
                 }
+                .available-green{
+                    font-size: 25px;
+                    color: green;
+                    padding: 0 15px;
+                }
+                .available-red {
+                    font-size: 25px;
+                    color: red;
+                    padding: 0 15px;
+                }
+            }
+            .form-check {
+                label {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
         .footer {
