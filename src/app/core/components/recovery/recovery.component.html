@@ -1,0 +1,23 @@
+<div class="recovery">
+    <div class="recovery-title col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2>{{'recovery.title' | translate}}</h2>
+    </div>
+    <div class="recovery-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form name="form" (ngSubmit)="f.form.valid && register()" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" #f="ngForm" novalidate>
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label for="name" class="form-label">{{'recovery.form.name' | translate}}</label>
+                <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !name.valid }" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+                <div *ngIf="f.submitted && !name.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+            </div>
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label for="surname" class="form-label">{{'recovery.form.surname' | translate}}</label>
+                <input type="surname" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !surname.valid }" name="surname" [(ngModel)]="model.surname" #surname="ngModel" required />
+                <div *ngIf="f.submitted && !surname.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+            </div>
+            <div class="footer col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <button class="btn">{{'recovery.form.submit' | translate}}</button>
+                <button class="btn" (click)="goBack()">{{'recovery.form.cancel' | translate}}</button>
+            </div>
+        </form>
+    </div>
+</div>

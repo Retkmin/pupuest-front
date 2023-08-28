@@ -4,27 +4,27 @@
     </div>
     <div class="register-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <form name="form" (ngSubmit)="f.form.valid && register()" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" #f="ngForm" novalidate>
-            <div class="field col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <label for="name" class="form-label">{{'register.form.name' | translate}}</label>
                 <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !name.valid }" name="name" [(ngModel)]="model.name" #name="ngModel" required />
                 <div *ngIf="f.submitted && !name.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
             </div>
-            <div class="field col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <label for="surname" class="form-label">{{'register.form.surname' | translate}}</label>
                 <input type="surname" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !surname.valid }" name="surname" [(ngModel)]="model.surname" #surname="ngModel" required />
                 <div *ngIf="f.submitted && !surname.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
             </div>
-            <div class="field col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <label for="user" class="form-label">{{'register.form.user' | translate}}</label>
                 <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !user.valid }" name="user" [(ngModel)]="model.user" #user="ngModel" required />
                 <div *ngIf="f.submitted && !user.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
             </div>
-            <div class="field col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <label for="email" class="form-label">{{'register.form.email' | translate}}</label>
                 <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !email.valid }" name="email" [(ngModel)]="model.email" #email="ngModel" required />
                 <div *ngIf="f.submitted && !email.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
             </div>
-            <div class="field col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <label for="datepicker" class="form-label">{{'register.form.birthday' | translate}}</label>
                 <input type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default' }" [(ngModel)]="model.selectedDate" #birthday="ngModel" required>
             </div>

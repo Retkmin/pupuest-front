@@ -61,5 +61,12 @@
             "submit": "Registrar",
             "cancel": "Cancelar"
         }
+    },
+    "recovery": {
+        "title": "Recuperacion de contraseña",
+        "name":"Email ",
+        "surname":"",
+        "submit": "Registrar",
+        "cancel": "Cancelar"
     }
 }
