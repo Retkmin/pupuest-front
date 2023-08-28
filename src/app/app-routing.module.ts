@@ -3,40 +3,40 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './core/components/login/login.component';
 import { MainComponent } from './core/components/main/main.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { UserDetailComponent } from './features/components/user-detail/user-detail.component';
-import { UserComponent } from './features/components/user/user.component';
 import { HomeComponent } from './features/pages/home/home.component';
-
+import { ProfileComponent } from './features/pages/profile/profile.component';
+import { MetricsComponent } from './features/pages/metrics/metrics.component';
+import { UserConfigurationComponent } from './features/pages/user-configuration/user-configuration.component';
+import { OperativeComponent } from './features/pages/operative/operative.component';
+import { RegisterComponent } from './core/components/register/register.component';
+import { RecoveryComponent } from './core/components/recovery/recovery.component';
 
 
 /**
- * Rutas securizadas
+ * Secure routes
  */
 const secureRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
   },
-  /**
-   * Consulta de usuarios
-   */
   {
-    path: 'users',
-    component: UserComponent
+    path: 'profile',
+    component: ProfileComponent
   },
-  /**
-   * Creación de usuarios.
-   */
+
   {
-    path: 'users/create',
-    component: UserDetailComponent
+    path: 'metrics',
+    component: MetricsComponent
   },
-  /**
-   * Detalle de usuarios.
-   */
+
   {
-    path: 'users/:id',
-    component: UserDetailComponent
+    path: 'user-config',
+    component: UserConfigurationComponent
+  },
+  {
+    path: 'operative',
+    component: OperativeComponent
   }
 ];
 
@@ -48,9 +48,17 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'recovery',
+    component: RecoveryComponent
+  },
 
   /**
-   * Ruta main securizada.
+   * Main secure routes
    */
   {
     path: 'main',

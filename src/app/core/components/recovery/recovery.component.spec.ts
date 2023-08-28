@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserDetailComponent } from './user-detail.component';
+import { RecoveryComponent } from './recovery.component';
 import { TestingHelper } from '../../helpers/testing.spec';
 
-describe('UserDetailComponent', () => {
-  let component: UserDetailComponent;
-  let fixture: ComponentFixture<UserDetailComponent>;
+describe('RecoveryComponent', () => {
+  let component: RecoveryComponent;
+  let fixture: ComponentFixture<RecoveryComponent>;
 
   beforeEach(async() => {
-    TestingHelper.configureTest()
+   TestingHelper.configureTest()
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserDetailComponent);
+    fixture = TestBed.createComponent(RecoveryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

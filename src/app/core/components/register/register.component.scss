@@ -1,0 +1,53 @@
+.register {
+    background-color: #2C3E50;
+    color: white;
+    height: 100%;
+    .register-title {
+        text-align: center;
+        padding-top: 5%;
+    }
+    .register-container {
+        padding: 5% 20% 10%;
+        display: flex;
+        flex-wrap: wrap;
+        form {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: fit-content;
+            .field {
+                padding: 10px;
+                height: 145px;
+                input {
+                    max-width: 300px;
+                }
+                .available-green{
+                    font-size: 25px;
+                    color: green;
+                    padding: 0 15px;
+                }
+                .available-red {
+                    font-size: 25px;
+                    color: red;
+                    padding: 0 15px;
+                }
+            }
+            .form-check {
+                label {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            .btn {
+                margin: 20px;
+                width: 200px;
+                background-color: #808B96;
+            }
+        }
+
+    }
+}

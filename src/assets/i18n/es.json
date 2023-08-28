@@ -33,10 +33,17 @@
     },
     "menu" : {
         "home": "Inicio",
-        "users" : "Usuarios",
         "logout" : "Salir"
     },
+    "header" : {
+        "app-name": "TradersLab",
+        "logout-lb" : "Cerrar sessión"
+    },
     "login" : {
+        "title": "TradersLab",
+        "slogan": "- Make your trade smarter -",
+        "recovery": "¿Has olvidado tu contraseña?",
+        "register": "Registrarse",
         "form" : {
             "user" : "Usuario",
             "password" : "Contraseña",
@@ -47,22 +54,28 @@
             "invalid-body": "El nombre de usuario y/o contraseña introducido no son correctos"
         }
     },
-    "user" : {
-        "id" : "ID",
-        "title" : "Usuarios",
-        "create" : "Crear usuario",
-        "selectRole" : "Seleccione un rol",
-        "roles" : "Roles",
-        "name": "Nombre",
-        "email": "Email",
-        "address": "Dirección",
-        "city": "Ciudad",
-        "country": "Pais",
-        "language": "Idioma",
-        "enabled": "Habilitado",
-        "username": "Nombre de usuario",
-        "password": "Contraseña",
-        "edit-user-title": "Editar usuario: {{name}}",
-        "create-user-title": "Crear nuevo usuario"
+    "register": {
+        "title": "Datos de registro",
+        "form": {
+            "name":"Nombre: ",
+            "surname":"Apellidos: ",
+            "user":"Nombre de usuario: ",
+            "email":"E-mail: ",
+            "birthday": "Fecha de nacimiento: ",
+            "company-conditions": "Codiciones de TradersLab",
+            "legal-conditions": "Legal y Prvacidad",
+            "data-protection-conditions": "Protecion de Datos",
+            "submit": "Registrar",
+            "cancel": "Cancelar"
+        }
+    },
+    "recovery": {
+        "title": "Recuperacion de contraseña",
+        "form": { 
+            "name":"Email o username ",
+            "submit": "Enviar"
+        },
+        "send-email-msg":"Se ha enviado un email de recuperación de contraseña a su email",
+        "back-btn": "Inicio"
     }
 }

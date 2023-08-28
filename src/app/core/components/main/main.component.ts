@@ -16,7 +16,7 @@ export class MainComponent {
   /**
    * Callapse var to open and close menu.
    */
-  isMenuCollapsed = false;
+  isMenuCollapsed = true;
 
   /**
    * Opoen and close function.

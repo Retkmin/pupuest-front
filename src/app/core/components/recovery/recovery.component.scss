@@ -1,0 +1,57 @@
+.recovery {
+    background-color: #2C3E50;
+    color: white;
+    height: 100%;
+    .recovery-title {
+        text-align: center;
+        padding-top: 5%;
+    }
+    .recovery-container {
+        padding: 5% 20% 10%;
+        display: flex;
+        flex-wrap: wrap;
+        form {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: fit-content;
+            justify-content: center;
+            .field {
+                padding: 10px;
+                height: 145px;
+                label {
+                    text-align: center;
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            .btn {
+                margin: 20px;
+                width: 200px;
+                background-color: #808B96;
+            }
+        }
+
+    }
+    .recovery-msg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-top: 35px;
+        text-align: center;
+        .send {
+            font-size: 70px;
+        }
+        h4 {
+            margin-top: 35px;
+        }
+        .btn {
+            margin: 20px;
+            width: 200px;
+            background-color: #808B96;
+        }
+    }
+}

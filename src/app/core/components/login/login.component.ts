@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   /**
    * Realiza el login del usuario.
    */
-  login() {
+  public login() {
     this.loginService.login(this.model.username, this.model.password).subscribe({
       next: (result: Response | {}) => {
         if (result) {
