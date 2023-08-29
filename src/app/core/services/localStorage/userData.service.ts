@@ -13,7 +13,7 @@ export class UserDataService {
   private userDataSubject = new BehaviorSubject<UserData>(new UserData());
   public userData$ = this.userDataSubject.asObservable();
 
-  public setUserData(userData: UserData): void {
+  /*public setUserData(userData: UserData): void {
     const jsonUserDataValue = JSON.stringify(userData.value);
     this.userData = userData;
     localStorage.setItem(userData.key, jsonUserDataValue);
@@ -35,6 +35,6 @@ export class UserDataService {
   public removeElementUserData(key: string): void {
     localStorage.removeItem(key);
     this.getUserData(key);
-  }
+  }*/
 }
 

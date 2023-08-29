@@ -39,9 +39,11 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.model.username, this.model.password).subscribe({
       next: (result: Response | {}) => {
         if (result) {
-          this.userService.getUserData().subscribe((user: User) => {
+          /*this.userService.getUserData().subscribe((user: User) => {
             localStorage.setItem('current_user', JSON.stringify(user));
-          });
+          });*/
+          localStorage.setItem('current_user', this.model.username);
+          localStorage.setItem('current_user_rol', 'Free')
           this.router.navigate(['/']);
         } else {
           this.toastr.error(this.translate.instant('login.error.invalid-body'), this.translate.instant('login.error.invalid'));

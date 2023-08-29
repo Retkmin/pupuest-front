@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 declare const TradingView: any;
 @Component({
   selector: 'app-home',
@@ -6,8 +6,11 @@ declare const TradingView: any;
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements AfterViewInit  {
-  //@ViewChild('chart') chart: ElementRef | undefined;
+export class HomeComponent implements AfterViewInit, OnInit  {
+  
+  ngOnInit(): void {
+    console.warn('Im home page');
+  }
   
   ngAfterViewInit() {
     new TradingView.widget({
@@ -29,34 +32,6 @@ export class HomeComponent implements AfterViewInit  {
       popup_height: "650",
       locale: "es"
     });
-    // this is ligthchart
-    /*if (this.chart) {
-      const chartOptions = {
-        layout: {
-          textColor: 'white',
-          background: {
-            type: 'solid',
-            color: 'black'
-          } as Background 
-        },       
-        grid: {
-            vertLines: { color: '#444' },
-            horzLines: { color: '#444' },
-        },
-      };
-      const chart = createChart(this.chart.nativeElement, chartOptions);
-    
-      const candlestickSeries = chart.addCandlestickSeries({
-          upColor: '#26a69a', 
-          downColor: '#ef5350', 
-          borderVisible: false,
-          wickUpColor: '#26a69a', 
-          wickDownColor: '#ef5350',
-      });
-
-      candlestickSeries.setData(chartMok);
-      chart.timeScale().fitContent();
-    }*/
   }
 
 }

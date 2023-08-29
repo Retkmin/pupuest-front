@@ -27,34 +27,29 @@ export class MenuItem {
  */
 export const MENU_ITEMS: MenuItem[] = [
   {
-    title: 'menu.home',
-    icon: 'ion-home',
+    title: 'menu.fist-item',
+    icon: 'bi bi-house',
     url: 'home'
   },
   {
-    title: 'menu.fist-item',
-    icon: '',
-    url: ''
-  },
-  {
     title: 'menu.second-item',
-    icon: '',
-    url: ''
+    icon: 'bi bi-person-gear',
+    url: 'profile'
   },
   {
     title: 'menu.third-item',
-    icon: '',
-    url: ''
+    icon: 'bi bi-puzzle',
+    url: 'operative'
   },
   {
     title: 'menu.fourth-item',
-    icon: '',
-    url: ''
+    icon: 'bi bi-graph-up',
+    url: 'metrics'
   },
   {
     title: 'menu.fifth-item',
-    icon: '',
-    url: ''
+    icon: 'bi bi-gear',
+    url: 'user-config'
   }
 ];
 

@@ -1,23 +1,23 @@
 export class UserData {
-    #key: string;
-    #value: unknown;
+    #userName: string;
+    #rol: string;
 
     constructor() {
-        this.#key = '';
-        this.#value = '';
+        this.#userName = '';
+        this.#rol = '';
       }
 
-    public get key(): string {
-        return this.#key;
+    public get userName(): string {
+        return this.#userName;
     }
-    public set key(key: string) {
-        this.#key = key;
+    public set userName(userName: string) {
+        this.#userName = userName;
     }
-    public get value(): unknown {
-        return this.#value;
+    public get rol(): string {
+        return this.#rol;
     }
-    public set value(value: unknown) {
-        this.#value = value;
+    public set rol(rol: string) {
+        this.#rol = rol;
     }
 
 }

@@ -1,0 +1,103 @@
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li:first-child {
+        display: flex;
+        align-items: center;
+        height: 108px;
+        color: white;
+        font-size: 50px;
+        padding: 1.875rem 0;
+        box-shadow: 0px 4px 6px rgb(153 146 146 / 30%);
+        .username {
+            font-size: 20px;  
+        }
+        .rol {
+            font-size: 12px;  
+            color: #999999;
+            font-style: italic;
+        }
+    }
+
+    li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+    li a {
+        display: block;
+        text-decoration: none;
+        color: #999999;
+    }
+    
+    li a:hover {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+    }
+    
+    li a:active, li a:focus {
+        text-decoration: none;
+    }
+    
+    .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+        display: flex;
+        a {
+            color: #999999;
+            i {
+                padding-right: 10px;
+            }
+        }
+        a:hover {
+            color: #fff;
+            background: none;
+        }
+        &.logout {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 0px -4px 6px rgba(153, 146, 146, 0.3)
+        }
+    }
+    
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 350px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 350px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 35px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+.nav, .pagination, .carousel, .panel-title a, a { cursor: pointer; }
+ 

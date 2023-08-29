@@ -32,8 +32,12 @@
         "no": "No"
     },
     "menu" : {
-        "home": "Inicio",
-        "logout" : "Salir"
+        "fist-item": "Inicio",
+        "second-item":"Perfil ",
+        "third-item":"Nueva estrategia ",
+        "fourth-item":"Métricas",
+        "fifth-item":"Configuración",
+        "logout":"Cerrar sessión"
     },
     "header" : {
         "app-name": "TradersLab",
