@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
     const currentUserRol = localStorage.getItem('current_user_rol')
     if(currentUser !== null && currentUserRol !== null) {
       this.userData.userName = currentUser;
-      this.userData.rol = currentUserRol;
+      this.userData.role = currentUserRol;
     }
   }
 

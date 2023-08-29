@@ -20,17 +20,16 @@
         position: absolute;
         margin-right: -350px;
     }
-}
-
-#page-content-wrapper {
+}  
+  #page-content-wrapper {
     z-index: 0;
     height: 100%;
     overflow: auto;
     width: 100%;
-    position: absolute;
+    position: relative;
     padding: 15px;
     background-color: #1C2833;
-}
+  }
 
 .sidebar-toggle {
     width: 100%;

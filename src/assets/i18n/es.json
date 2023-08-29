@@ -81,5 +81,11 @@
         },
         "send-email-msg":"Se ha enviado un email de recuperación de contraseña a su email",
         "back-btn": "Inicio"
+    },
+    "pages": {
+        "home": { 
+            "diary-title": "Diario de Trading",
+            "general-metrics-title": "Metricas Generales"
+        }
     }
 }

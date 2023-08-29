@@ -15,6 +15,7 @@ import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgChartsModule } from 'ng2-charts';
 
 
 // -------------- Services --------------
@@ -81,7 +82,8 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     NgProgressHttpModule,
     NgProgressRouterModule,
     NgSelectModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    NgChartsModule
   ],
   providers: [
     AuthGuard,

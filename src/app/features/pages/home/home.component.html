@@ -1,5 +1,36 @@
 <div class="row home">
-	<div class="col-12">
-		<div id="chart" class="chart col-12" #chart></div>
-	</div>
+    <div class="diary col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+        <h4>{{ 'pages.home.diary-title' | translate }}</h4>
+        <ul>
+            <div class="col-12">
+                <hr class="col-12">
+            </div>
+            <li class="asset col-12" *ngFor="let asset of assetList">
+                <div class="asset-container col-12" [ngClass]="{'benefit': asset.state === 1, 'loss': asset.state === 2}">
+                    <div class="col-3" >{{ asset.name }}</div>
+                    <div class="col-3" >{{ asset.operationCount }}</div>
+                    <div class="col-3" >{{ asset.balanceAccount }}%</div>
+                    <div class="col-3" >
+                        <i class="bi bi-arrow-left-right" *ngIf="asset.state === 0"></i>
+                        <i class="bi bi-hand-thumbs-up" *ngIf="asset.state === 1"></i>
+                        <i class="bi bi-hand-thumbs-down" *ngIf="asset.state === 2"></i>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
+        </ul>
+        <div class="add-button">
+            <button class="btn">
+                <i class="bi bi-plus-circle"></i>
+            </button>
+        </div>
+    </div>
+    <div class="general-metrics col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h4>{{ 'pages.home.general-metrics-title' | translate }}</h4>
+        <div class="general-datacard flex justify-content-center">
+            
+        </div>
+    </div>
 </div>
