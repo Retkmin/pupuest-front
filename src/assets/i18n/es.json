@@ -85,7 +85,17 @@
     "pages": {
         "home": { 
             "diary-title": "Diario de Trading",
-            "general-metrics-title": "Metricas Generales"
+            "general-metrics-title": "Metricas Generales",
+            "general-data": {
+                "asks-lb": "Operaciones Asks: ",
+                "bids-lb": "Operaciones Bids: ",
+                "win-ratio-lb": "Ratios de aciertos: ",
+                "r-average-lb": "Media de Rs: ",
+                "best-op": "Mejor operación: ",
+                "worse-op": "Peor operación: ",
+                "max-drawdown": "Drawdown máximo: ",
+                "media-risk": "Riesgo medio: "
+            }
         }
     }
 }

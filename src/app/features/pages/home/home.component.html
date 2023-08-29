@@ -30,7 +30,54 @@
     <div class="general-metrics col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <h4>{{ 'pages.home.general-metrics-title' | translate }}</h4>
         <div class="general-datacard flex justify-content-center">
-            
+            <div class="data-container col-12">
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.asks-lb' | translate }}</label>
+                    <div>{{ generalAccountData.aksCount }}</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.best-op' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.bestOperation }} {{currency}}</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.bids-lb' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.bidsCount }}</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.worse-op' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.worseOperation }} {{currency}}</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.win-ratio-lb' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.winRatio }} %</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.max-drawdown' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.maxDrawdown }} %</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.r-average-lb' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.rAverage }} R</div>
+                </div>
+                <div class="asset-data col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <label class="col-6">{{ 'pages.home.general-data.media-risk' | translate }}</label>
+                    <div class="col-6">{{ generalAccountData.risk }} %</div>
+                </div>
+            </div>
+            <div class="charts-container col-12">
+                <div class="doughnut-chart col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <canvas baseChart
+                        [type]="'doughnut'"
+                        [data]="doughnutData">
+                    </canvas>
+                </div>
+                <div class="line-chart col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <canvas baseChart
+                        [type]="'line'"
+                        [data]="lineData">
+                    </canvas>
+                </div>
+            </div>
         </div>
     </div>
 </div>

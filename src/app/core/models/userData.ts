@@ -5,6 +5,8 @@ export class UserData {
     #roleCode: number;
     #language: string;
     #languageCode: number;
+    #currency: string;
+    #currencyCode: number;
 
     constructor() {
         this.#userId = '';
@@ -13,6 +15,9 @@ export class UserData {
         this.#roleCode = 0;
         this.#language = '';
         this.#languageCode = 0;
+        this.#role = '';
+        this.#currency = '';
+        this.#currencyCode = 0;
       }
 
     public get userId(): string {
@@ -51,5 +56,16 @@ export class UserData {
     public set languageCode(languageCode: number) {
         this.#languageCode = languageCode;
     }
-
+    public get currency(): string {
+        return this.#currency;
+    }
+    public set currency(currency: string) {
+        this.#currency = currency;
+    }
+    public get currencyCode(): number {
+        return this.#currencyCode;
+    }
+    public set currencyCode(currencyCode: number) {
+        this.#currencyCode = currencyCode;
+    }
 }
