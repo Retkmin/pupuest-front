@@ -1,4 +1,4 @@
-# Front - Angular TradingLab
+# Front - Angular TradersLab
 
 Proyect to create automated back testing of trading strategy. 
 
