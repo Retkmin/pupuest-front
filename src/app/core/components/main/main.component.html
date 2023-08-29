@@ -1,14 +1,9 @@
 <div id="wrapper" [ngClass]="{toggled:isMenuCollapsed}">
-    
-    <div class="sidebar-toggle" (click)="toggleMenu()">
-		<em class="oi oi-menu"></em>
-	</div>
-
     <div id="sidebar-wrapper">
         <app-menu (collapse)="toggleMenu()">
         </app-menu>
     </div>
-    <app-header class="header"></app-header>
+    <app-header class="header" (toggleMenu)="toggleMenu()"></app-header>
     <div id="page-content-wrapper">
         <router-outlet></router-outlet>
     </div>

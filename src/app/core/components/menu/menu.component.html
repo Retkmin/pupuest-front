@@ -1,9 +1,20 @@
 <ul class="sidebar-nav">
+  <li class="col-12">
+    <i class="user bi bi-person-circle"></i>
+    <label class="username">{{ userData.userName }}</label>
+    <label class="rol">{{ userData.rol }}</label>
+  </li>
   <li *ngFor="let item of menuItems" class="sidebar-brand">
-    <a [routerLink]="[item.url]" (click)="collapseMenu()">{{item.title | translate}}</a>
+    <a [routerLink]="[item.url]" (click)="collapseMenu()">
+      <i [ngClass]="item.icon"></i> 
+      {{item.title | translate}}
+    </a>
   </li>
 
-  <li class="sidebar-brand">
-    <a (click)="logout()"> {{'menu.logout' | translate}} </a>
+  <li class="sidebar-brand logout">
+    <a (click)="logout()">
+      <i class="bi bi-door-closed"></i>
+      {{'menu.logout' | translate}} 
+    </a>
   </li>
 </ul>
