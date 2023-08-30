@@ -4,16 +4,21 @@
             <h2>{{'recovery.title' | translate}}</h2>
         </div>
         <div class="recovery-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <form name="form" (ngSubmit)="f.form.valid && register()" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" #f="ngForm" novalidate>
+            <form [formGroup]="userRecoveryForm" (ngSubmit)="userRecoveryForm.valid && register()"
+                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" novalidate>
                 <div class="field col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <label for="name" class="form-label col-12">{{'recovery.form.name' | translate}}</label>
-                    <input type="text" class="form-control col-12" [ngClass]="{ 'is-invalid': f.submitted && !name.valid }" name="name" [(ngModel)]="model.name" #name="ngModel" required />
-                    <div *ngIf="f.submitted && !name.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                    <label for="user" class="form-label col-12">{{ 'recovery.form.user' | translate }}</label>
+                    <input type="text" class="form-control col-12" [placeholder]="'recovery.form.user-ph' | translate"
+                            [ngClass]="{ 'is-invalid': userRecoveryForm.get('user')?.invalid && userRecoveryForm.get('user')?.touched }"
+                            formControlName="user" required />
+                    <div *ngIf="userRecoveryForm.get('user')?.invalid && userRecoveryForm.get('user')?.touched"
+                        class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
                 </div>
                 <div class="footer col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <button class="btn">{{'recovery.form.submit' | translate}}</button>
+                    <button class="btn" [disabled]="!userRecoveryForm.valid">{{ 'recovery.form.submit' | translate }}</button>
                 </div>
             </form>
+      
         </div>
     </div>
     <div *ngIf="displayMsg" class="row recovery-msg col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

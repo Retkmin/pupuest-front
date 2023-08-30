@@ -38,16 +38,21 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     title: 'menu.third-item',
-    icon: 'bi bi-puzzle',
-    url: 'operative'
+    icon: 'bi bi-journal-medical',
+    url: 'diary'
   },
   {
     title: 'menu.fourth-item',
-    icon: 'bi bi-graph-up',
-    url: 'metrics'
+    icon: 'bi bi-graph-up ',
+    url: 'operative'
   },
   {
     title: 'menu.fifth-item',
+    icon: 'bi bi-pie-chart ',
+    url: 'metrics'
+  },
+  {
+    title: 'menu.sixth-item',
     icon: 'bi bi-gear',
     url: 'user-config'
   }

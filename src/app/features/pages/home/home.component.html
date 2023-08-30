@@ -5,6 +5,17 @@
             <div class="col-12">
                 <hr class="col-12">
             </div>
+            <li class="asset col-12">
+                <div class="asset-container col-12">
+                    <div class="col-3" ></div>
+                    <div class="col-3" >{{ 'pages.home.diary.operations' | translate }}</div>
+                    <div class="col-3" >{{ 'pages.home.diary.asset-balance' | translate }}</div>
+                    <div class="col-3" ></div>
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
             <li class="asset col-12" *ngFor="let asset of assetList">
                 <div class="asset-container col-12" [ngClass]="{'benefit': asset.state === 1, 'loss': asset.state === 2}">
                     <div class="col-3" >{{ asset.name }}</div>

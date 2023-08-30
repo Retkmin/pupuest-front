@@ -10,6 +10,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
 import { OperativeComponent } from './features/pages/operative/operative.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { RecoveryComponent } from './core/components/recovery/recovery.component';
+import { DiaryComponent } from './features/pages/diary/diary.component';
 
 
 /**
@@ -24,7 +25,10 @@ const secureRoutes: Routes = [
     path: 'profile',
     component: ProfileComponent
   },
-
+  {
+    path: 'diary',
+    component: DiaryComponent
+  },
   {
     path: 'metrics',
     component: MetricsComponent

@@ -33,10 +33,11 @@
     },
     "menu" : {
         "fist-item": "Inicio",
-        "second-item":"Perfil ",
-        "third-item":"Nueva estrategia ",
-        "fourth-item":"Métricas",
-        "fifth-item":"Configuración",
+        "second-item":"Perfil",
+        "third-item":"Diario de trading",
+        "fourth-item":"Nueva estrategia",
+        "fifth-item":"Métricas",
+        "sixth-item":"Configuración",
         "logout":"Cerrar sessión"
     },
     "header" : {
@@ -50,7 +51,9 @@
         "register": "Registrarse",
         "form" : {
             "user" : "Usuario",
-            "password" : "Contraseña",
+            "user-ph": "Introduce nombre de Usuario o Email",
+            "password" : "Introduzca la contraseña",
+            "password-ph": "Contraseña",
             "submit" : "Acceder"
         },
         "error": {
@@ -62,10 +65,15 @@
         "title": "Datos de registro",
         "form": {
             "name":"Nombre: ",
+            "name-ph":"Nombre",
             "surname":"Apellidos: ",
+            "surname-ph":"Apellidos ",
             "user":"Nombre de usuario: ",
+            "user-ph":"Nombre de usuario ",
             "email":"E-mail: ",
+            "email-ph":"Email ej. example@domain.com",
             "birthday": "Fecha de nacimiento: ",
+            "birthday-ph": "DD-MM-yyyy",
             "company-conditions": "Codiciones de TradersLab",
             "legal-conditions": "Legal y Prvacidad",
             "data-protection-conditions": "Protecion de Datos",
@@ -76,7 +84,8 @@
     "recovery": {
         "title": "Recuperacion de contraseña",
         "form": { 
-            "name":"Email o username ",
+            "user":"Email o username ",
+            "user-ph":"Introduce nombre de Usuario o Email",
             "submit": "Enviar"
         },
         "send-email-msg":"Se ha enviado un email de recuperación de contraseña a su email",
@@ -84,7 +93,12 @@
     },
     "pages": {
         "home": { 
-            "diary-title": "Diario de Trading",
+            "diary-title": "Assets del diario de trading",
+            "diary": {
+                "asset-name-lb": "Nombre del activo",
+                "operations":"Nº operaciones",
+                "asset-balance":"Balance"
+            },
             "general-metrics-title": "Metricas Generales",
             "general-data": {
                 "asks-lb": "Operaciones Asks: ",

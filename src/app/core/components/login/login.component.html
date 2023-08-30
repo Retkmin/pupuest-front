@@ -11,19 +11,26 @@
                 </div>
             </div>
             <div class="login-form col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                <form [formGroup]="userLoginForm" (ngSubmit)="userLoginForm.valid && login()">
                     <div class="mb-3">
-                        <label for="username" class="form-label">{{'login.form.user' | translate}}</label>
-                        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !username.valid }" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-                        <div *ngIf="f.submitted && !username.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                      <label for="username" class="form-label">{{ 'login.form.user' | translate }}</label>
+                      <input type="text" class="form-control" [placeholder]="'login.form.user-ph' | translate"
+                        [ngClass]="{ 'is-invalid': userLoginForm.get('username')?.invalid && userLoginForm.get('username')?.touched}" formControlName="username" />
+                      <div *ngIf="userLoginForm.get('username')?.invalid && userLoginForm.get('username')?.touched" class="invalid-feedback">
+                        {{ 'form.validation.required' | translate }}
+                      </div>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">{{'login.form.password' | translate}}</label>
-                        <input type="password" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !password.valid }" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-                        <div *ngIf="f.submitted && !password.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                      <label for="password" class="form-label">{{ 'login.form.password' | translate }}</label>
+                      <input type="password" class="form-control" [placeholder]="'login.form.password-ph' | translate"
+                        [ngClass]="{ 'is-invalid': userLoginForm.get('password')?.invalid && userLoginForm.get('username')?.touched}" formControlName="password" />
+                      <div *ngIf="userLoginForm.get('password')?.invalid && userLoginForm.get('username')?.touched" class="invalid-feedback">
+                        {{ 'form.validation.required' | translate }}
+                      </div>
                     </div>
-                    <button class="btn">{{'login.form.submit' | translate}}</button>
-                </form>
+                    <button class="btn" type="submit">{{ 'login.form.submit' | translate }}</button>
+                  </form>
+                  
                 <div class="form-actions">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <a routerLink="/recovery">{{'login.recovery' | translate}}</a>

@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit{
 
   public goProfile(): void {
     this.loginService.logout();
-    this.router.navigate(['/profile']);
+    this.router.navigate(['main/profile']);
   }
 
   public swapMenu(): void {

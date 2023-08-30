@@ -16,6 +16,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgChartsModule } from 'ng2-charts';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 // -------------- Services --------------
@@ -61,11 +62,12 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     ProfileComponent,
     MetricsComponent,
     OperativeComponent,
-    PaginationComponent
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

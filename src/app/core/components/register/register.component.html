@@ -1,53 +1,81 @@
 <div class="register">
     <div class="register-title col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <h2>{{'register.title' | translate}}</h2>
+        <h2>{{ 'register.title' | translate }}</h2>
     </div>
     <div class="register-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <form name="form" (ngSubmit)="f.form.valid && register()" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" #f="ngForm" novalidate>
+        <form [formGroup]="userRegisterForm" (ngSubmit)="userRegisterForm.valid && register()"
+            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="name" class="form-label">{{'register.form.name' | translate}}</label>
-                <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !name.valid }" name="name" [(ngModel)]="model.name" #name="ngModel" required />
-                <div *ngIf="f.submitted && !name.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                <label for="name" class="form-label">{{ 'register.form.name' | translate }}</label>
+                <input type="text" class="form-control" [placeholder]="'register.form.name-ph' | translate"
+                    [ngClass]="{ 'is-invalid': userRegisterForm.get('name')?.invalid && userRegisterForm.get('name')?.touched }"
+                    formControlName="name" />
+                <div *ngIf="userRegisterForm.get('name')?.invalid && userRegisterForm.get('name')?.touched"
+                    class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
             </div>
             <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="surname" class="form-label">{{'register.form.surname' | translate}}</label>
-                <input type="surname" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !surname.valid }" name="surname" [(ngModel)]="model.surname" #surname="ngModel" required />
-                <div *ngIf="f.submitted && !surname.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                <label for="surname" class="form-label">{{ 'register.form.surname' | translate }}</label>
+                <input type="text" class="form-control" [placeholder]="'register.form.surname-ph' | translate"
+                    [ngClass]="{ 'is-invalid': userRegisterForm.get('surname')?.invalid && userRegisterForm.get('surname')?.touched }"
+                    formControlName="surname" />
+                <div *ngIf="userRegisterForm.get('surname')?.invalid && userRegisterForm.get('surname')?.touched"
+                    class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
             </div>
             <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="user" class="form-label">{{'register.form.user' | translate}}</label>
+                <label for="user" class="form-label">{{ 'register.form.user' | translate }}</label>
                 <div class="d-flex">
-                    <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !user.valid }" name="user" [(ngModel)]="model.user" #user="ngModel" required (blur)="checkNickName()"/>
+                    <input type="text" class="form-control" [placeholder]="'register.form.user-ph' | translate"
+                        [ngClass]="{ 'is-invalid': userRegisterForm.get('user')?.invalid && userRegisterForm.get('user')?.touched }"
+                        formControlName="user" required (blur)="checkNickName()" />
                     <i *ngIf="usernameAvailable === 1" class="available-green bi bi-check-square"></i>
                     <i *ngIf="usernameAvailable === 2" class="available-red bi bi-x-square"></i>
                 </div>
-                <div *ngIf="f.submitted && !user.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                <div *ngIf="userRegisterForm.get('user')?.invalid && userRegisterForm.get('user')?.touched"
+                    class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
             </div>
             <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="email" class="form-label">{{'register.form.email' | translate}}</label>
-                <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !email.valid }" name="email" [(ngModel)]="model.email" #email="ngModel" required />
-                <div *ngIf="f.submitted && !email.valid" class="invalid-feedback">{{'form.validation.required' | translate}}</div>
+                <label for="email" class="form-label">{{ 'register.form.email' | translate }}</label>
+                <div class="d-flex">
+                    <input type="text" class="form-control" [placeholder]="'register.form.email-ph' | translate"
+                    [ngClass]="{ 'is-invalid': userRegisterForm.get('email')?.invalid && userRegisterForm.get('email')?.touched }"
+                    formControlName="email" required />
+                    <i *ngIf="emailAvailable === 1" class="available-green bi bi-check-square"></i>
+                    <i *ngIf="emailAvailable === 2" class="available-red bi bi-x-square"></i>
+                </div>
+                <div *ngIf="userRegisterForm.get('email')?.invalid && userRegisterForm.get('email')?.touched"
+                    class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
             </div>
             <div class="field col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="datepicker" class="form-label">{{'register.form.birthday' | translate}}</label>
-                <input type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default' }" [(ngModel)]="model.selectedDate" #birthday="ngModel" required>
+                <label for="birthday" class="form-label">{{ 'register.form.birthday' | translate }}</label>
+                <input type="text" class="form-control" bsDatepicker [placeholder]="'register.form.birthday-ph' | translate"
+                    [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-default' }" name="birthday"
+                    formControlName="birthday" required (blur)="checkEmail()" />
+                <div *ngIf="userRegisterForm.get('birthday')?.invalid && userRegisterForm.get('birthday')?.touched"
+                    class="invalid-feedback">{{ 'form.validation.required' | translate }}</div>
             </div>
             <div class="form-check col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <input class="form-check-input" type="checkbox" id="company">
-                <label class="form-check-label" for="company">{{'register.form.company-conditions' | translate}}</label>
+                <input class="form-check-input" type="checkbox" id="company" name="company"
+                    formControlName="companyCondition" required>
+                <label class="form-check-label"
+                    for="company">{{ 'register.form.company-conditions' | translate }}</label>
             </div>
             <div class="form-check col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <input class="form-check-input" type="checkbox" id="legal">
-                <label class="form-check-label" for="legal">{{'register.form.legal-conditions' | translate}}</label>
+                <input class="form-check-input" type="checkbox" id="legal" name="legal"
+                    formControlName="legalCondition" required>
+                <label class="form-check-label"
+                    for="legal">{{ 'register.form.legal-conditions' | translate }}</label>
             </div>
             <div class="form-check col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <input class="form-check-input" type="checkbox" id="protection">
-                <label class="form-check-label" for="protection">{{'register.form.data-protection-conditions' | translate}}</label>
+                <input class="form-check-input" type="checkbox" id="protection" name="protection"
+                    formControlName="protectionCondition" required>
+                <label class="form-check-label"
+                    for="protection">{{ 'register.form.data-protection-conditions' | translate }}</label>
             </div>
             <div class="footer col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <button class="btn">{{'register.form.submit' | translate}}</button>
-                <button class="btn" (click)="goBack()">{{'register.form.cancel' | translate}}</button>
+                <button class="btn" [disabled]="!userRegisterForm.valid">{{ 'register.form.submit' | translate }}</button>
+                <button class="btn" (click)="goBack()">{{ 'register.form.cancel' | translate }}</button>
             </div>
         </form>
     </div>
 </div>
+
