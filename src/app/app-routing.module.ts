@@ -1,53 +1,51 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadingStrategy, Route } from '@angular/router';
 import { LoginComponent } from './core/components/login/login.component';
 import { MainComponent } from './core/components/main/main.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { HomeComponent } from './features/pages/home/home.component';
-import { ProfileComponent } from './features/pages/profile/profile.component';
-import { MetricsComponent } from './features/pages/metrics/metrics.component';
-import { UserConfigurationComponent } from './features/pages/user-configuration/user-configuration.component';
-import { OperativeComponent } from './features/pages/operative/operative.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { RecoveryComponent } from './core/components/recovery/recovery.component';
-import { DiaryComponent } from './features/pages/diary/diary.component';
+import { Observable, of } from 'rxjs';
 
+
+class CustomPreloadingStrategy implements PreloadingStrategy {
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
+    const routeData = route.data as { preload: boolean };
+    return routeData && routeData.preload ? load() : of(null);
+  }
+}
 
 /**
  * Secure routes
  */
 const secureRoutes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent
+  { 
+    path: 'home', 
+    loadChildren: () => import('./features/pages/home/home.module').then(mod => mod.HomeModule), data: { preload: true } 
   },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
+  { 
     path: 'diary',
-    component: DiaryComponent
+    loadChildren: () => import('./features/pages/diary/diary.module').then(mod => mod.DiaryModule), data: { preload: true } 
   },
-  {
+  { 
     path: 'metrics',
-    component: MetricsComponent
+    loadChildren: () => import('./features/pages/metrics/metrics.module').then(mod => mod.MetricsModule), data: { preload: true } 
   },
-
-  {
-    path: 'user-config',
-    component: UserConfigurationComponent
-  },
-  {
+  { 
     path: 'operative',
-    component: OperativeComponent
-  }
+    loadChildren: () => import('./features/pages/operative/operative.module').then(mod => mod.OperativeModule), data: { preload: true } 
+  },
+  { 
+    path: 'profile',
+    loadChildren: () => import('./features/pages/profile/profile.module').then(mod => mod.ProfileModule) 
+  },
+  { 
+    path: 'user-configuration',
+    loadChildren: () => import('./features/pages/user-configuration/user-configuration.module').then(mod => mod.UserConfigurationModule) 
+}
 ];
 
 const routes: Routes = [
-/**
- * Login
- */
  {
     path: 'login',
     component: LoginComponent
@@ -60,18 +58,12 @@ const routes: Routes = [
     path: 'recovery',
     component: RecoveryComponent
   },
-
-  /**
-   * Main secure routes
-   */
   {
     path: 'main',
     component: MainComponent,
     canActivate: [AuthGuard],
     children: secureRoutes
   },
-
-  // otherwhise redirect to main
   {
       path: '**',
       redirectTo: 'main/home'
@@ -79,7 +71,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes,
+    {
+      preloadingStrategy: CustomPreloadingStrategy
+    })],
+  exports: [RouterModule],
+  providers: [CustomPreloadingStrategy]
 })
 export class AppRoutingModule { }

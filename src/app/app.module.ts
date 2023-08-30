@@ -1,7 +1,7 @@
 // -------------- Modules --------------
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,8 +15,6 @@ import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { NgChartsModule } from 'ng2-charts';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 // -------------- Services --------------
@@ -27,15 +25,11 @@ import { UserDataService } from './core/services/localStorage/userData.service';
 import { ErrorService } from './core/services/errorService/error.service';
 
 // -------------- Components --------------
-import { HomeComponent } from './features/pages/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { MainComponent } from './core/components/main/main.component';
 import { MenuComponent } from './core/components/menu/menu.component';
 import { PaginationComponent } from './core/components/pagination/pagination.component';
-import { ProfileComponent } from './features/pages/profile/profile.component';
-import { MetricsComponent } from './features/pages/metrics/metrics.component';
-import { OperativeComponent } from './features/pages/operative/operative.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { RecoveryComponent } from './core/components/recovery/recovery.component';
 
@@ -46,7 +40,6 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { OAuthInterceptor } from './core/interceptors/oauth-interceptor';
 import { TokenizedInterceptor } from './core/interceptors/tokenized-interceptor';
 import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
-import { UserConfigurationComponent } from './features/pages/user-configuration/user-configuration.component';
 
 @NgModule({
   declarations: [
@@ -56,12 +49,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     RecoveryComponent,
     MainComponent,
     MenuComponent,
-    HomeComponent,
-    UserConfigurationComponent,
     HeaderComponent,
-    ProfileComponent,
-    MetricsComponent,
-    OperativeComponent,
     PaginationComponent,
   ],
   imports: [
@@ -84,8 +72,7 @@ import { UserConfigurationComponent } from './features/pages/user-configuration/
     NgProgressHttpModule,
     NgProgressRouterModule,
     NgSelectModule,
-    BsDatepickerModule,
-    NgChartsModule
+    BsDatepickerModule
   ],
   providers: [
     AuthGuard,
