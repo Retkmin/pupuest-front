@@ -4,7 +4,7 @@ import { defineLocale, esLocale } from 'ngx-bootstrap/chronos';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecoveryData } from '../../models/recoveryData';
-import { RecoveryService } from '../../services/recovery/recovery.service';
+import { RecoveryService } from '../../services/recoveryService/recovery.service';
 
 @Component({
   selector: 'app-recovery',
@@ -37,7 +37,7 @@ export class RecoveryComponent implements OnInit {
   }
 
   public register() {
-    this.recoveryData.user =this.userRecoveryForm.get('user')?.value;
+    this.recoveryData.user = this.userRecoveryForm.get('user')?.value;
     this.recoveryService.recoveryAccount(this.recoveryData).subscribe(() => {
       this.displayMsg = true;
     })

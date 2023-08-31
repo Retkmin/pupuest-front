@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { LocalStorageData } from '../../models/localStorageData';
+import { LocalStorageService } from '../../services/localStorageService/localStorage.service';
 
 /**
  * Componente que muestra el menú de la aplicación.
@@ -13,17 +15,17 @@ import { LoginService } from '../../services/login.service';
 export class HeaderComponent implements OnInit{
   @Output() toggleMenu: EventEmitter<boolean> =
   new EventEmitter<boolean>();
-  public username: string= '';
+  public userName: string= '';
+  public storedLocalStorageData: LocalStorageData = new LocalStorageData();
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private localStorageService: LocalStorageService,
   ) { }
 
   ngOnInit() {
-    const currentUser = localStorage.getItem('current_user')
-    if(currentUser !== null) {
-      this.username = currentUser;
-    }
+    this.storedLocalStorageData = this.localStorageService.getItem('localStorageData');
+    this.userName = this.storedLocalStorageData.userProfile.userName;
   }
 
   public logout(): void {

@@ -29,6 +29,10 @@
                       </div>
                     </div>
                     <button class="btn" type="submit">{{ 'login.form.submit' | translate }}</button>
+                    <div class="captcha-container" [hidden]="hiddenCaptcha">
+                      <re-captcha (resolved)="resolved($event)" siteKey="recaptchaSiteKey"></re-captcha>
+                      <div class="g-recaptcha" data-sitekey="sitKey"></div>
+                    </div>
                   </form>
                   
                 <div class="form-actions">

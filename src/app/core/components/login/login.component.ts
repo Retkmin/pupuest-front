@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
-import { User } from '../../models/user';
 import { LoginService } from '../../services/login.service';
 import { UserService } from '../../services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginData } from '../../models/loginData';
+import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { LocalStorageData } from '../../models/localStorageData';
+import { LocalStorageService } from '../../services/localStorageService/localStorage.service';
 
-/**
- * Componente para la gestión del login.
- */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,14 +19,16 @@ import { LoginData } from '../../models/loginData';
 export class LoginComponent implements OnInit {
   public loginData: LoginData = new LoginData();
   public userLoginForm: FormGroup = {} as FormGroup;
-
+  public storedLocalStorageData: LocalStorageData = new LocalStorageData();
+  public hiddenCaptcha: boolean = true;
+  public recaptchaSiteKey: string = environment.recaptcha.siteKeyV2;
   constructor(
     private router: Router, 
     private translate: TranslateService, 
     private toastr: ToastrService, 
     private loginService: LoginService,
-    private userService: UserService,
-    private formBuilder: FormBuilder
+    private localStorageService: LocalStorageService,
+    private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit(): void {
@@ -45,14 +47,15 @@ export class LoginComponent implements OnInit {
    * Realiza el login del usuario.
    */
   public login() {
-    this.loginService.login(this.loginData.userName, this.loginData.password).subscribe({
+    this.loginService.login(this.userLoginForm.get('username')?.value, this.userLoginForm.get('password')?.value).subscribe({
       next: (result: Response | {}) => {
         if (result) {
           /*this.userService.getUserData().subscribe((user: User) => {
             localStorage.setItem('current_user', JSON.stringify(user));
           });*/
-          localStorage.setItem('current_user', this.loginData.userName);
-          localStorage.setItem('current_user_rol', 'Free')
+          this.storedLocalStorageData.userProfile.userName = this.userLoginForm.get('username')?.value;
+          this.storedLocalStorageData.settings.role = 'free';
+          this.localStorageService.setItem('localStorageData', this.storedLocalStorageData.toJSON());
           this.router.navigate(['/']);
         } else {
           this.toastr.error(this.translate.instant('login.error.invalid-body'), this.translate.instant('login.error.invalid'));
@@ -62,5 +65,13 @@ export class LoginComponent implements OnInit {
         this.toastr.error(this.translate.instant('login.error.invalid-body'), this.translate.instant('login.error.invalid'));
       }
     });
+  }
+
+  resolved(captchaResponse: string) {
+    console.warn(`Resolved captcha with response: ${captchaResponse}`);
+  }
+
+  public reCaptresetRecaptcha() {
+    grecaptcha.reset();
   }
 }

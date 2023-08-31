@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { defineLocale, esLocale } from 'ngx-bootstrap/chronos';
 import { Router } from '@angular/router';
-import { RegisterService } from '../../services/resgister/register.service';
+import { RegisterService } from '../../services/resgisterService/register.service';
 import { UserRegisterData } from '../../models/userResgister';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 /**
@@ -101,17 +101,17 @@ export class RegisterComponent implements OnInit {
   }
 
   private setUserRegisterFormData(): void { 
-    this.userRegisterData.name =this.userRegisterForm.get('name')?.value;
-    this.userRegisterData.surname =this.userRegisterForm.get('surname')?.value;
-    this.userRegisterData.userName =this.userRegisterForm.get('user')?.value;
+    this.userRegisterData.name = this.userRegisterForm.get('name')?.value;
+    this.userRegisterData.surname = this.userRegisterForm.get('surname')?.value;
+    this.userRegisterData.userName = this.userRegisterForm.get('user')?.value;
     //this.userRegisterData.roleCode =this.userRegisterForm.get('userName')?.value;
-    this.userRegisterData.email =this.userRegisterForm.get('email')?.value;
-    this.userRegisterData.birthdate =this.userRegisterForm.get('birthday')?.value;
+    this.userRegisterData.email = this.userRegisterForm.get('email')?.value;
+    this.userRegisterData.birthdate = this.userRegisterForm.get('birthday')?.value;
     ///this.userRegisterData.language =this.userRegisterForm.get('userName')?.value;
     //this.userRegisterData.currency =this.userRegisterForm.get('userName')?.value;
-    this.userRegisterData.companyCondition =this.userRegisterForm.get('companyCondition')?.value;
-    this.userRegisterData.legalCondition =this.userRegisterForm.get('legalCondition')?.value;
-    this.userRegisterData.protectionCondition =this.userRegisterForm.get('protectionCondition')?.value;
+    this.userRegisterData.companyCondition = this.userRegisterForm.get('companyCondition')?.value;
+    this.userRegisterData.legalCondition = this.userRegisterForm.get('legalCondition')?.value;
+    this.userRegisterData.protectionCondition = this.userRegisterForm.get('protectionCondition')?.value;
 
   }
 }

@@ -109,7 +109,43 @@
                 "worse-op": "Peor operación: ",
                 "max-drawdown": "Drawdown máximo: ",
                 "media-risk": "Riesgo medio: "
+            },
+            "modal": {
+                "title": "Nuevo asset",
+                "name": "Nombre: ",
+                "name-ph":"Nombre del asset",
+                "submit": "Guardar",
+                "cancel": "Cancelar"
             }
+        },
+        "diary": {
+            "account-balance": {
+                "title": "Balance general"
+            },
+            "asset-list": {
+                "title":"Lista de assets",
+                "operations":"Nº operaciones",
+                "asset-balance":"Balance"
+            },
+            "recent-moves": {
+                "title":"Movimientos recientes",
+                "moves": {
+                    "asset-name": "Nombre",
+                    "operation-type": "Tipo de Op.",
+                    "date": "Fecha de ejecución",
+                    "amount": "Riesgo",
+                    "state": "Estado"
+
+                }
+            },
+            "modal": {
+                "title": "Nuevo asset",
+                "name": "Nombre: ",
+                "name-ph":"Nombre del asset",
+                "submit": "Guardar",
+                "cancel": "Cancelar"
+            }   
+            
         }
     }
 }

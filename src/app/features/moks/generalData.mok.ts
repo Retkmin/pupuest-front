@@ -1,4 +1,4 @@
-import { GeneralAccountData } from "../model/generalAccountData";
+import { GeneralAccountData } from "../pages/home/model/generalAccountData";
 
 export const generalAccountDataMok: GeneralAccountData = {
     aksCount: '47/100',

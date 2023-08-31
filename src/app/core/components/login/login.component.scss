@@ -40,7 +40,17 @@
                         color:white;
                     }
                 }
+                .captcha-container {
+                    background-color: transparent !important;
+                    padding: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    & .captcha {
+                        background-color: transparent !important;
+                    }
+                
                 }
+            }
 
         }
     }

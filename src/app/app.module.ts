@@ -15,13 +15,12 @@ import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaFormsModule, RecaptchaSettings } from 'ng-recaptcha';
 
 // -------------- Services --------------
 import { LoginService } from './core/services/login.service';
 import { MenuService } from './core/services/menu.service';
 import { UserService } from './core/services/user.service';
-import { UserDataService } from './core/services/localStorage/userData.service';
 import { ErrorService } from './core/services/errorService/error.service';
 
 // -------------- Components --------------
@@ -40,6 +39,9 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { OAuthInterceptor } from './core/interceptors/oauth-interceptor';
 import { TokenizedInterceptor } from './core/interceptors/tokenized-interceptor';
 import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
+
+// ---------------- ENVs ------------------
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -72,14 +74,15 @@ import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
     NgProgressHttpModule,
     NgProgressRouterModule,
     NgSelectModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
     AuthGuard,
     LoginService,
     MenuService,
     UserService,
-    UserDataService,
     ErrorService,
     {
       provide: HTTP_INTERCEPTORS,
@@ -91,7 +94,13 @@ import { ServerErrorInterceptor } from './core/interceptors/error-interceptor';
       useClass: OAuthInterceptor,
       multi: true
     },
-    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKeyV2,
+      } as RecaptchaSettings,
+    },
   ],
   bootstrap: [AppComponent]
 })

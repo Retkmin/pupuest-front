@@ -7,5 +7,8 @@ export const environment = {
   urlBase: 'http://localhost:8080',
   oauthUrl: '',
   oauthClientId: 'acme',
-  oauthSecret: 'acmesecret'
+  oauthSecret: 'acmesecret',
+  recaptcha: {
+    siteKeyV2: '6LeKeOgnAAAAAJU5a-me42q99LB_2hGg5GqYj3b8', 
+  },
 };

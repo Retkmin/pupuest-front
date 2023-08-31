@@ -8,7 +8,7 @@ export class Asset {
         this.#name = '';
         this.#operationCount = 0;
         this.#balanceAccount = 0;
-        this.#state = 1;
+        this.#state = 0;
       }
 
     public get name(): string {

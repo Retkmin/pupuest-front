@@ -1,0 +1,15 @@
+<div class="new-asset-modal">
+    <form [formGroup]="assetForm" (ngSubmit)="assetForm.valid && newAsset()"
+    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="field col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <label for="name" class="form-label">{{ 'pages.home.modal.name' | translate }}</label>
+        <input type="text" class="form-control" [placeholder]="'pages.home.modal.name-ph' | translate" formControlName="name" />
+    </div>
+
+    <div class="footer col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <button class="btn" [disabled]="!assetForm.valid">{{ 'pages.home.modal.submit' | translate }}</button>
+        <button class="btn" (click)="goBack()">{{ 'pages.home.modal.cancel' | translate  }}</button>
+    </div>
+</form>
+</div>
+

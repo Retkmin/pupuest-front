@@ -1,4 +1,4 @@
-import { Asset } from "../model/asset";
+import { Asset } from "../components/new-asset-modal/model/asset";
 
 export const assetListMok: Asset[] = [
     {

@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { MenuItem } from '../../models/menu';
 import { LoginService } from '../../services/login.service';
 import { MenuService } from '../../services/menu.service';
-import { UserData } from '../../models/userData';
+import { Subscription } from 'rxjs';
+import { LocalStorageService } from '../../services/localStorageService/localStorage.service';
+import { LocalStorageData } from '../../models/localStorageData';
 
 @Component({
   selector: 'app-menu',
@@ -14,22 +16,20 @@ import { UserData } from '../../models/userData';
 export class MenuComponent implements OnInit {
   @Output() collapse: EventEmitter<boolean> =
   new EventEmitter<boolean>();
-  public userData: UserData = new UserData();
   public menuItems: MenuItem[] = [];
-
-  constructor(private router: Router, private menuService: MenuService, private loginService: LoginService) { }
+  public userDataSubscription: Subscription = new Subscription();
+  public localStorageData: LocalStorageData = new LocalStorageData();
+  constructor(
+    private router: Router,
+    private menuService: MenuService,
+    private loginService: LoginService,
+    private localStorageService: LocalStorageService,) { }
 
   ngOnInit() {
     this.menuService.getMenu().then((menuItems: MenuItem[]) => {
       this.menuItems = menuItems;
     });
-    
-    const currentUser = localStorage.getItem('current_user');
-    const currentUserRol = localStorage.getItem('current_user_rol')
-    if(currentUser !== null && currentUserRol !== null) {
-      this.userData.userName = currentUser;
-      this.userData.role = currentUserRol;
-    }
+    this.localStorageData = this.localStorageService.getItem('localStorageData');
   }
 
   logout() {

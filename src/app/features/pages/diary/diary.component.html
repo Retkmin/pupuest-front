@@ -1,5 +1,98 @@
 <div class="row diary">
-	<div class="col-lg-12">
-		<h1>Diary</h1>
-	</div>
+    <div class="account-balance col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+            <h4>{{ 'pages.diary.account-balance.title' | translate }}</h4>
+        </div>
+        <div class="account-detail col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+
+        </div>
+    </div>
+    <div class="asset-list col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+        <h4>{{ 'pages.diary.asset-list.title' | translate }}</h4>
+        <ul>
+            <div class="col-12">
+                <hr class="col-12">
+            </div>
+            <li class="asset col-12">
+                <div class="asset-container col-12">
+                    <div class="col-3" ></div>
+                    <div class="col-3" >{{ 'pages.diary.asset-list.operations' | translate }}</div>
+                    <div class="col-3" >{{ 'pages.asset-list.asset-balance' | translate }}</div>
+                    <div class="col-3" ></div>
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
+            <li class="asset col-12" *ngFor="let asset of assetList">
+                <div class="asset-container col-12" [ngClass]="{'benefit': asset.state === 1, 'loss': asset.state === 2}">
+                    <div class="col-3" >{{ asset.name }}</div>
+                    <div class="col-3" >{{ asset.operationCount }}</div>
+                    <div class="col-3" >{{ asset.balanceAccount }}%</div>
+                    <div class="col-3" >
+                        <i class="bi bi-arrow-left-right" *ngIf="asset.state === 0"></i>
+                        <i class="bi bi-hand-thumbs-up" *ngIf="asset.state === 1"></i>
+                        <i class="bi bi-hand-thumbs-down" *ngIf="asset.state === 2"></i>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
+        </ul>
+        <div class="add-button">
+            <button class="btn" (click)="openNewAssetModal(newAssetTemplate)">
+                <i class="bi bi-plus-circle"></i>
+            </button>
+        </div>
+    </div>
+    <div class="recent-moves-list col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+        <h4>{{ 'pages.diary.recent-moves.title' | translate }}</h4>
+        <ul>
+            <li class="moves-header col-12">
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+                <div class="moves-header-container col-12">
+                    <div class="col-2" ></div>
+                    <div class="col-2" ></div>
+                    <div class="col-2" >{{ 'pages.diary.recent-moves.moves.operation-type' | translate }}</div>
+                    <div class="col-2" >{{ 'pages.diary.recent-moves.moves.date' | translate }}</div>
+                    <div class="col-2" >{{ 'pages.diary.recent-moves.moves.amount' | translate }}</div>
+                    <div class="col-2" ></div>  
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
+            <li class="move col-12" *ngFor="let move of recentMoveList">
+                <div class="move-container col-12" [ngClass]="{'live': move.state, 'close': !move.state}">
+                    <div class="state col-2" >
+                        <i class="bi bi-circle-fill" *ngIf="move.state"></i>
+                        <i class="bi bi-circle-fill" *ngIf="!move.state"></i>
+                    </div>
+                    <div class="col-2" >{{ move.asset.name }}</div>
+                    <div class="col-2" >{{ move.type }}</div>
+                    <div class="col-2" >{{ move.startDate | date }}</div>
+                    <div class="col-2" >{{ move.risk }} %</div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="col-12">
+                    <hr class="col-12">
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
+
+<ng-template #newAssetTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ 'pages.diary.modal.title' | translate }}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeNewAssetModal()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-new-asset-modal (closeModal)="closeNewAssetModal()" (saveAsset)="addAsset($event)"></app-new-asset-modal>
+    </div>
+</ng-template>

@@ -33,7 +33,7 @@
             </li>
         </ul>
         <div class="add-button">
-            <button class="btn">
+            <button class="btn" (click)="openNewAssetModal(newAssetTemplate)">
                 <i class="bi bi-plus-circle"></i>
             </button>
         </div>
@@ -92,3 +92,15 @@
         </div>
     </div>
 </div>
+
+<ng-template #newAssetTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ 'pages.home.modal.title' | translate }}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeNewAssetModal()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-new-asset-modal (closeModal)="closeNewAssetModal()" (saveAsset)="addAsset($event)"></app-new-asset-modal>
+    </div>
+</ng-template>

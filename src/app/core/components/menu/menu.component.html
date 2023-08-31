@@ -1,8 +1,8 @@
 <ul class="sidebar-nav">
   <li class="col-12">
     <i class="user bi bi-person-circle"></i>
-    <label class="username">{{ userData.userName }}</label>
-    <label class="rol">{{ userData.role }}</label>
+    <label class="username">{{ localStorageData.userProfile.userName }}</label>
+    <label class="rol">{{ localStorageData.settings.role }}</label>
   </li>
   <li *ngFor="let item of menuItems" class="sidebar-brand">
     <a [routerLink]="[item.url]" (click)="collapseMenu()">
