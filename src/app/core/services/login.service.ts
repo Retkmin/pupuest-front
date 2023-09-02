@@ -31,11 +31,12 @@ export class LoginService extends AbstractService {
     * @returns Observable con el resultado de la llamada.
     */
    login(username: string, password: string): Observable<Response> {
-    
-      const data = `grant_type=password&username=${username}&password=${password}`;
+    const fromData = new FormData();
+    fromData.append("username", username);
+    fromData.append("password", password);
 
-      /*return this.httpClient
-        .post(Helper.getUrl('/oauth/token'), data)
+      return this.httpClient
+        .post(Helper.getUrl('/user_auth/login'), fromData)
         .pipe(
           map((response: any) => {
             if (response) {
@@ -49,17 +50,8 @@ export class LoginService extends AbstractService {
             return response;
           }),
           catchError(this.handleError)
-        );*/
-      //TODO mok login
-        const response: Response = new Response();
+        );
 
-        return new Observable<Response>(observer => {
-          observer.next(response);
-          this.loggedIn = true;
-          observer.complete();
-        });
-
-    //TODO mok login end
     }
 
     /**
